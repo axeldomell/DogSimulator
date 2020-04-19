@@ -1,9 +1,10 @@
 package com.example.dogsimulator;
 
+import android.widget.ImageView;
+import android.view.View;
 import java.util.Stack;
 
 public class DogChanger {
-
   private Stack<String> states;
 
   public DogChanger(){
@@ -13,8 +14,7 @@ public class DogChanger {
   // changes the currentAnimation based on the mood parameter
   public void changeAnimation(String mood){
     switch (mood){
-      case "happy":
-        //change picture...
+      case "bark":
         states.push(mood);
         break;
       case "sad":
