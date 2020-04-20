@@ -12,9 +12,10 @@ public class DogChanger {
   }
 
   // changes the currentAnimation based on the mood parameter
-  public void changeAnimation(String mood){
+  public void changeAnimation(String mood, ImageView image){
     switch (mood){
       case "bark":
+        image.setImageResource(R.drawable.dog_sitting_tounge);
         states.push(mood);
         break;
       case "sad":
