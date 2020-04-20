@@ -1,7 +1,9 @@
 package com.example.dogsimulator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   ImageView image;
   DogChanger dogChanger;
   VoiceRecognizer voiceRecognizer;
+  ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.RECORD_AUDIO}, 1);
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

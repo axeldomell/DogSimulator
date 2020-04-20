@@ -1,6 +1,9 @@
 package com.example.dogsimulator;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
@@ -113,5 +116,11 @@ public class VoiceRecognizer implements RecognitionListener {
   @Override
   public void onEvent(int eventType, Bundle params) {
 
+  }
+  private void requestRecordAudioPermission() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      String requiredPermission = Manifest.permission.RECORD_AUDIO;
+
+    }
   }
 }
