@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   MediaPlayer player;
   private SensorManager sensorManager;
   Sensor accelerometer;
-  private ImageView image;
+  ImageView image;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +58,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     if (mAccel > 10 &&mAccel <= 19){
       image.setImageResource(R.drawable.dog_sitting_tounge);
       play(R.raw.bark2);
-    }
-    if (mAccel > 19) {
-      image.setImageResource(R.drawable.dog_sitting_tounge);
-      play(R.raw.bark);
     }
   }
 

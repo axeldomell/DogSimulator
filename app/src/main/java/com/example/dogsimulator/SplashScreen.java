@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMEOUT = 4000;
+    private static int SPLASH_TIMEOUT = 3000;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run(){
                 startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 SplashScreen.this.finish();
-                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+               // overridePendingTransition(R.anim.fadein,R.anim.fadeout);
             }
         }, SPLASH_TIMEOUT);
     }
