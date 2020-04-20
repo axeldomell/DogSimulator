@@ -14,4 +14,14 @@
       app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/dog_sitting" />
 
+  <TextView
+    android:id="@+id/voiceDetector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/status_text"
+    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintVertical_bias="0.087" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
