@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelLast = SensorManager.GRAVITY_EARTH;
     image = (ImageView) findViewById(R.id.status_text);
   }
-  public void play() {
+  public void play(int sound) {
     if (player == null) {
-      player = MediaPlayer.create(this, R.raw.bark2);
+      player = MediaPlayer.create(this, sound);
     }
     player.start();
   }
@@ -55,9 +55,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
     float delta = mAccelCurrent - mAccelLast;
     mAccel = mAccel * 0.9f + delta;
-    if (mAccel > 12) {
+    if (mAccel > 10 &&mAccel <= 19){
       image.setImageResource(R.drawable.dog_sitting_tounge);
-      play();
+      play(R.raw.bark2);
+    }
+    if (mAccel > 19) {
+      image.setImageResource(R.drawable.dog_sitting_tounge);
+      play(R.raw.bark);
     }
   }
 
