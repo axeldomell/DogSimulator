@@ -19,7 +19,6 @@ public class SplashScreen extends AppCompatActivity {
             public void run(){
                 startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 SplashScreen.this.finish();
-               // overridePendingTransition(R.anim.fadein,R.anim.fadeout);
             }
         }, SPLASH_TIMEOUT);
     }
