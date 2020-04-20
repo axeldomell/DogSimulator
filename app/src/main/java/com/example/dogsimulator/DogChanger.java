@@ -6,13 +6,15 @@ import java.util.Stack;
 
 public class DogChanger {
   private Stack<String> states;
+  private ImageView image;
 
-  public DogChanger(){
+  public DogChanger(ImageView image){
+    this.image = image;
     this.states = new Stack<>();
   }
 
   // changes the currentAnimation based on the mood parameter
-  public void changeAnimation(String mood, ImageView image){
+  public void changeAnimation(String mood){
     switch (mood){
       case "bark":
         image.setImageResource(R.drawable.dog_sitting_tounge);

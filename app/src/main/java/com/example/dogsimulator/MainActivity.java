@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelCurrent = SensorManager.GRAVITY_EARTH;
     mAccelLast = SensorManager.GRAVITY_EARTH;
     image = (ImageView) findViewById(R.id.status_text);
-    dogChanger = new DogChanger();
+    dogChanger = new DogChanger(image);
   }
   public void play(int sound) {
     if (player == null) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     float delta = mAccelCurrent - mAccelLast;
     mAccel = mAccel * 0.9f + delta;
     if (mAccel > 10 &&mAccel <= 19){
-      dogChanger.changeAnimation("bark", image);
+      dogChanger.changeAnimation("bark");
       play(R.raw.bark2);
     }
   }
