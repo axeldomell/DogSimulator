@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   ImageView image;
   DogChanger dogChanger;
   VoiceRecognizer voiceRecognizer;
-  ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.RECORD_AUDIO}, 1);
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelLast = SensorManager.GRAVITY_EARTH;
     image = (ImageView) findViewById(R.id.status_text);
     dogChanger = new DogChanger(image);
-    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this));
+    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this),image);
   }
   public void play(int sound) {
     if (player == null) {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,10 +19,12 @@ public class VoiceRecognizer implements RecognitionListener {
   protected TextView result;
   protected Intent intent;
   protected SpeechRecognizer recognizer=null;
+  ImageView image;
 
-  public VoiceRecognizer(TextView text, SpeechRecognizer speechRecognizer){
+  public VoiceRecognizer(TextView text, SpeechRecognizer speechRecognizer, ImageView image){
 
     result = text;
+    this.image =image;
     intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
     intent.putExtra(RecognizerIntent.EXTRA_WEB_SEARCH_ONLY, "false");
@@ -102,7 +105,9 @@ public class VoiceRecognizer implements RecognitionListener {
     String text = "";
 
     for (String word : words) {
-      text += word + " ";
+      if (word.equals("lie down")){
+        image.setImageResource(R.drawable.dog_sleeping);
+      }
     }
 
     result.setText(text);
