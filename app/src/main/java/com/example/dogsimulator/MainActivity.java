@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.speech.SpeechRecognizer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelLast = SensorManager.GRAVITY_EARTH;
     image = (ImageView) findViewById(R.id.status_text);
     dogChanger = new DogChanger(image);
-    //voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector));
+    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this));
   }
   public void play(int sound) {
     if (player == null) {

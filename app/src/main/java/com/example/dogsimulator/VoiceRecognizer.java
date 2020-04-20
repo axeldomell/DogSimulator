@@ -16,7 +16,7 @@ public class VoiceRecognizer implements RecognitionListener {
   protected Intent intent;
   protected SpeechRecognizer recognizer=null;
 
-  public VoiceRecognizer(TextView text){
+  public VoiceRecognizer(TextView text, SpeechRecognizer speechRecognizer){
 
     result = text;
     intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -24,7 +24,7 @@ public class VoiceRecognizer implements RecognitionListener {
     intent.putExtra(RecognizerIntent.EXTRA_WEB_SEARCH_ONLY, "false");
     intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, "3000");
 
-    //recognizer =  SpeechRecognizer.createSpeechRecognizer(this);
+    recognizer =  speechRecognizer;
     recognizer.setRecognitionListener(this);
     recognizer.startListening(intent);
   }
