@@ -13,8 +13,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.SpeechRecognizer;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
   private float mAccel;
@@ -26,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   ImageView image;
   DogChanger dogChanger;
   VoiceRecognizer voiceRecognizer;
-
+  ImageButton voiceButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelLast = SensorManager.GRAVITY_EARTH;
     image = (ImageView) findViewById(R.id.status_text);
     dogChanger = new DogChanger(image);
-    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this),image);
+    voiceButton =(ImageButton)findViewById(R.id.vButton);
+    voiceButton.setOnClickListener(new View.OnClickListener()   {
+      public void onClick(View v)  {
+        startListen();
+      }
+    });
+
   }
   public void play(int sound) {
     if (player == null) {
@@ -74,4 +84,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   public void onAccuracyChanged(Sensor sensor, int i) {
 
   }
+
+  public void startListen(){
+    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this),image);
+  }
+
 }
+
+
