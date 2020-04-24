@@ -108,9 +108,13 @@ public class VoiceRecognizer implements RecognitionListener {
       if (word.equals("lie down")){
         image.setImageResource(R.drawable.dog_sleeping);
       }
+      if(word.equals("stand up")){
+        image.setImageResource(R.drawable.dog_rising);
+      }
     }
 
     result.setText(text);
+    recognizer.destroy();
   }
 
   @Override
