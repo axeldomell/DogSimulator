@@ -1,3 +1,4 @@
 <resources>
-  <string name="app_name">DogSimulator</string>
+    <string name="app_name">DogSimulator</string>
+    <string name="steps">Steps</string>
 </resources>

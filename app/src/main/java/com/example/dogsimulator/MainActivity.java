@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -50,7 +51,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         startListen();
       }
     });
-
+  }
+  public void step(View view) {
+    Intent intent = new Intent(this, StepCounter.class);
+    startActivity(intent);
   }
   public void play(int sound) {
     if (player == null) {

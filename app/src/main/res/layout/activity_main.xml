@@ -16,15 +16,29 @@
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/dog_sitting" />
 
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="504dp"
+      android:onClick="step"
+      android:text="@string/steps"
+      android:textSize="24sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent" />
+
   <TextView
-    android:id="@+id/voiceDetector"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="@+id/status_text"
-    app:layout_constraintTop_toTopOf="@+id/status_text"
-    app:layout_constraintVertical_bias="0.087" />
+      android:id="@+id/voiceDetector"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.523"
+      app:layout_constraintStart_toStartOf="@+id/status_text"
+      app:layout_constraintTop_toTopOf="@+id/status_text"
+      app:layout_constraintVertical_bias="0.957" />
 
   <ImageButton
     android:id="@+id/vButton"
