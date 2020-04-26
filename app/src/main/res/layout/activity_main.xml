@@ -17,28 +17,29 @@
     app:srcCompat="@drawable/dog_sitting" />
 
   <Button
-      android:id="@+id/button2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="504dp"
-      android:onClick="step"
-      android:text="@string/steps"
-      android:textSize="24sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
-      app:layout_constraintStart_toStartOf="parent" />
+    android:id="@+id/button2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="step"
+    android:text="@string/steps"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="@+id/status_text"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.539"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.226" />
 
   <TextView
-      android:id="@+id/voiceDetector"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.523"
-      app:layout_constraintStart_toStartOf="@+id/status_text"
-      app:layout_constraintTop_toTopOf="@+id/status_text"
-      app:layout_constraintVertical_bias="0.957" />
+    android:id="@+id/voiceDetector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.52"
+    app:layout_constraintStart_toStartOf="@+id/status_text"
+    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintVertical_bias="0.848" />
 
   <ImageButton
     android:id="@+id/vButton"
@@ -48,10 +49,10 @@
     android:scaleType="fitXY"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.52"
+    app:layout_constraintHorizontal_bias="0.525"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.976"
+    app:layout_constraintVertical_bias="0.953"
     app:srcCompat="@drawable/speech_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
