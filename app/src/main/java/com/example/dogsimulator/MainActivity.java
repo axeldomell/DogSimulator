@@ -2,15 +2,18 @@ package com.example.dogsimulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.SpeechRecognizer;
 import android.view.View;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   private float mAccel;
   private float mAccelCurrent;
   private float mAccelLast;
+  private boolean visibility;
   MediaPlayer player;
   private SensorManager sensorManager;
   Sensor accelerometer;
@@ -32,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   DogChanger dogChanger;
   VoiceRecognizer voiceRecognizer;
   ImageButton voiceButton;
+  ImageView walkButton;
+  ImageView helpButton;
+  TextView helpBox;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +50,35 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccel =10f;
     mAccelCurrent = SensorManager.GRAVITY_EARTH;
     mAccelLast = SensorManager.GRAVITY_EARTH;
+    visibility=true;
     image = (ImageView) findViewById(R.id.status_text);
     dogChanger = new DogChanger(image);
+    helpBox = (TextView)findViewById(R.id.helpbox);
     voiceButton =(ImageButton)findViewById(R.id.vButton);
+    helpButton =(ImageView)findViewById(R.id.help_button);
+    walkButton=(ImageView)findViewById(R.id.walk_button);
+    walkButton.setOnClickListener(new View.OnClickListener(){
+      public void onClick(View v){
+        step(v);
+      }
+    });
+    helpButton.setOnClickListener(new View.OnClickListener(){
+      public void onClick(View v){
+       if(visibility) {
+         helpBox.setVisibility(View.VISIBLE);
+         visibility = false;
+       }else{
+         helpBox.setVisibility(View.INVISIBLE);
+         visibility=true;
+       }
+      }
+    });
     voiceButton.setOnClickListener(new View.OnClickListener()   {
       public void onClick(View v)  {
         startListen();
       }
     });
+
   }
   public void step(View view) {
     Intent intent = new Intent(this, StepCounter.class);
@@ -93,6 +121,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this),image);
   }
 
+
 }
+
+
 
 

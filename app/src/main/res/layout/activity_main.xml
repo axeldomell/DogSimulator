@@ -16,20 +16,6 @@
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/dog_sitting" />
 
-  <Button
-    android:id="@+id/button2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:onClick="step"
-    android:text="@string/steps"
-    android:textSize="24sp"
-    app:layout_constraintBottom_toBottomOf="@+id/status_text"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.539"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.226" />
-
   <TextView
     android:id="@+id/voiceDetector"
     android:layout_width="wrap_content"
@@ -54,5 +40,43 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.953"
     app:srcCompat="@drawable/speech_icon" />
+
+  <ImageView
+    android:id="@+id/help_button"
+    android:layout_width="118dp"
+    android:layout_height="79dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/status_text"
+    app:layout_constraintHorizontal_bias="0.098"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.975"
+    app:srcCompat="@drawable/help_button" />
+
+  <ImageView
+    android:id="@+id/walk_button"
+    android:layout_width="121dp"
+    android:layout_height="78dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.944"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.975"
+    app:srcCompat="@drawable/walk_button" />
+
+  <TextView
+    android:id="@+id/helpbox"
+    android:layout_width="287dp"
+    android:layout_height="404dp"
+    android:background="#CE8BC34A"
+    android:text="Insert helpful tips here................................"
+    android:textSize="18sp"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/status_text"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintVertical_bias="0.467" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

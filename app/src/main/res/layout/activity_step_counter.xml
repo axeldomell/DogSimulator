@@ -79,6 +79,8 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.101" />
 
+
+
   <ImageView
     android:id="@+id/imageView3"
     android:layout_width="wrap_content"
@@ -86,5 +88,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:srcCompat="@drawable/dog_walk"
     tools:layout_editor_absoluteX="0dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
