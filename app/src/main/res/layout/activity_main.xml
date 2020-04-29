@@ -41,25 +41,14 @@
     app:layout_constraintVertical_bias="0.953"
     app:srcCompat="@drawable/speech_icon" />
 
-  <ImageView
-    android:id="@+id/walk_button"
-    android:layout_width="121dp"
-    android:layout_height="78dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.944"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.975"
-    app:srcCompat="@drawable/walk_button" />
-
   <TextView
     android:id="@+id/helpbox"
     android:layout_width="287dp"
     android:layout_height="404dp"
     android:background="#C4D5B591"
     android:fontFamily="sans-serif-condensed-medium"
-    android:text="Tips 1: Shake to bark           Tips 2: Use the microphone to talk                                 "
+    android:lineSpacingExtra="12sp"
+    android:text="♦ Shake to bark\n♦ Use the mic to talk\n♦ Try to say 'Stand up'"
     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
     android:textSize="24sp"
     android:visibility="invisible"
@@ -80,5 +69,17 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.023"
     app:srcCompat="@drawable/help" />
+
+  <ImageView
+    android:id="@+id/walk_button"
+    android:layout_width="93dp"
+    android:layout_height="126dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.971"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintVertical_bias="1.0"
+    app:srcCompat="@drawable/walk_dog" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
