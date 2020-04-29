@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
   }
   public void step(View view) {
+   sensorManager.unregisterListener(this);
     Intent intent = new Intent(this, StepCounter.class);
     startActivity(intent);
   }
