@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -78,7 +79,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         startListen();
       }
     });
-
+    ActivityCompat.requestPermissions(MainActivity.this,
+      new String[]{Manifest.permission.RECORD_AUDIO},
+      1);
   }
   public void step(View view) {
    sensorManager.unregisterListener(this);
@@ -118,11 +121,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
   }
 
-  public void startListen(){
-    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this),image);
+  public void startListen() {
+    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this), image);
+
   }
-
-
+  @Override
+  public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    switch (requestCode) {
+      case 1: {
+        if (grantResults.length > 0
+          && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        } else {
+          Toast.makeText(MainActivity.this, "Insufficient permissions", Toast.LENGTH_SHORT).show();
+        }
+        return;
+      }
+    }
+  }
 }
 
 
