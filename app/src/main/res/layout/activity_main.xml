@@ -10,8 +10,8 @@
     android:id="@+id/dog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scaleType="fitEnd"
     android:background="@android:color/transparent"
+    android:scaleType="fitEnd"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/dog_sitting" />
@@ -52,11 +52,10 @@
     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
     android:textSize="24sp"
     android:visibility="invisible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/status_text"
+    app:layout_constraintBottom_toBottomOf="@+id/dog"
+    app:layout_constraintEnd_toEndOf="@+id/dog"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/status_text"
-    app:layout_constraintVertical_bias="0.467" />
+    app:layout_constraintTop_toTopOf="@+id/dog" />
 
   <ImageView
     android:id="@+id/help_button"
