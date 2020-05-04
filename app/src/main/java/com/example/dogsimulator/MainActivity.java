@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   }
 
   public void startListen() {
-    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this), image);
+    voiceRecognizer = new VoiceRecognizer((TextView) findViewById(R.id.voiceDetector), SpeechRecognizer.createSpeechRecognizer(this), image, (ImageView) findViewById(R.id.alce));
 
   }
   @Override

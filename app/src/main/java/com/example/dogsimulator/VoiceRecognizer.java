@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,12 +20,13 @@ public class VoiceRecognizer implements RecognitionListener {
   protected TextView result;
   protected Intent intent;
   protected SpeechRecognizer recognizer=null;
-  ImageView image;
+  ImageView image, alce;
 
-  public VoiceRecognizer(TextView text, SpeechRecognizer speechRecognizer, ImageView image){
+  public VoiceRecognizer(TextView text, SpeechRecognizer speechRecognizer, ImageView image, ImageView alce){
 
     result = text;
-    this.image =image;
+    this.image = image;
+    this.alce = alce;
     intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
     intent.putExtra(RecognizerIntent.EXTRA_WEB_SEARCH_ONLY, "false");
@@ -110,6 +112,9 @@ public class VoiceRecognizer implements RecognitionListener {
       }
       if(word.equals("stand up")){
         image.setImageResource(R.drawable.dog_rising);
+      }
+      if(word.equals("decorate the room")){
+        alce.setVisibility(View.VISIBLE);
       }
     }
 

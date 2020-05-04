@@ -23,8 +23,8 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.52"
-    app:layout_constraintStart_toStartOf="@+id/status_text"
-    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintStart_toStartOf="@+id/dog"
+    app:layout_constraintTop_toTopOf="@+id/dog"
     app:layout_constraintVertical_bias="0.848" />
 
   <ImageButton
@@ -77,8 +77,20 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.971"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/status_text"
+    app:layout_constraintTop_toTopOf="@+id/dog"
     app:layout_constraintVertical_bias="1.0"
     app:srcCompat="@drawable/walk_dog" />
+
+  <ImageView
+      android:id="@+id/alce"
+      android:layout_width="187dp"
+      android:layout_height="103dp"
+      android:visibility="invisible"
+      app:layout_constraintBottom_toTopOf="@+id/helpbox"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/dog"
+      app:srcCompat="@drawable/alce" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
