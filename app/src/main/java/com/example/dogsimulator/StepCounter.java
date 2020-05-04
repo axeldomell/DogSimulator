@@ -2,6 +2,7 @@ package com.example.dogsimulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -57,6 +58,15 @@ public class StepCounter extends AppCompatActivity {
 
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        StepCounter.this.finish();
+    }
+
+
     protected void onPause() {
         super.onPause();
 
@@ -66,6 +76,8 @@ public class StepCounter extends AppCompatActivity {
         editor.putInt("stepCount", stepCount);
         editor.apply();
     }
+
+
     protected void onStop() {
         super.onStop();
 
@@ -75,12 +87,16 @@ public class StepCounter extends AppCompatActivity {
         editor.putInt("stepCount", stepCount);
         editor.apply();
     }
+
+
     protected void onResume() {
         super.onResume();
 
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         stepCount = sharedPreferences.getInt("stepCount", 0);
     }
+
+
     public void reset(View view) {
         stepCount = 0;
         distance = 0.0;

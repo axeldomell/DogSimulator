@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccelCurrent = SensorManager.GRAVITY_EARTH;
     mAccelLast = SensorManager.GRAVITY_EARTH;
     visibility=true;
-    image = (ImageView) findViewById(R.id.status_text);
+    image = (ImageView) findViewById(R.id.dog);
     dogChanger = new DogChanger(image);
     helpBox = (TextView)findViewById(R.id.helpbox);
     voiceButton =(ImageButton)findViewById(R.id.vButton);
@@ -84,9 +84,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
       1);
   }
   public void step(View view) {
-   sensorManager.unregisterListener(this);
     Intent intent = new Intent(this, StepCounter.class);
     startActivity(intent);
+    sensorManager.unregisterListener(this);
+    MainActivity.this.finish();
   }
   public void play(int sound) {
     if (player == null) {
