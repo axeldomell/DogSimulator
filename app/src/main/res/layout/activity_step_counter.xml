@@ -80,15 +80,13 @@
     app:layout_constraintVertical_bias="0.101" />
 
 
-
-  <ImageView
-    android:id="@+id/imageView3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+  <pl.droidsonroids.gif.GifImageView
+    android:layout_width="389dp"
+    android:layout_height="570dp"
+    android:src="@drawable/dog_walk"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:srcCompat="@drawable/dog_walk"
-    tools:layout_editor_absoluteX="0dp" />
-
-
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
