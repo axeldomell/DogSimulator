@@ -11,16 +11,16 @@
 
   <TextView
     android:id="@+id/textView4"
-    android:layout_width="297dp"
-    android:layout_height="328dp"
-    android:fontFamily="sans-serif-condensed-light"
+    android:layout_width="279dp"
+    android:layout_height="314dp"
+    android:fontFamily="sans-serif-condensed"
     android:lineSpacingExtra="14sp"
-    android:text="♦ Shake to bark\n♦ Use the mic to talk\n♦ Try to say 'Stand up'"
-    android:textSize="30sp"
+    android:text="♦ Shake to bark\n♦ Use the mic to talk\n♦ Try to say 'Stand up'\n♦ Wanna go for a walk? Click on the dog down to the right"
+    android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.92"
+    app:layout_constraintHorizontal_bias="1.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.129" />
+    app:layout_constraintVertical_bias="0.172" />
 </androidx.constraintlayout.widget.ConstraintLayout>

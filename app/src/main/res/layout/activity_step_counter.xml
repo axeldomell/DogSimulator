@@ -10,14 +10,18 @@
     android:id="@+id/button2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#BEFFC107"
     android:onClick="reset"
     android:text="Restart stroll"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.922" />
+    app:layout_constraintVertical_bias="0.922"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:background="@drawable/button_background"/>
 
   <TextView
     android:id="@+id/textView3"
