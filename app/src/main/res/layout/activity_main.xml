@@ -41,21 +41,7 @@
     app:layout_constraintVertical_bias="0.953"
     app:srcCompat="@drawable/speech_icon" />
 
-  <TextView
-    android:id="@+id/helpbox"
-    android:layout_width="287dp"
-    android:layout_height="404dp"
-    android:background="#C4D5B591"
-    android:fontFamily="sans-serif-condensed-medium"
-    android:lineSpacingExtra="12sp"
-    android:text="♦ Shake to bark\n♦ Use the mic to talk\n♦ Try to say 'Stand up'"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-    android:textSize="24sp"
-    android:visibility="invisible"
-    app:layout_constraintBottom_toBottomOf="@+id/dog"
-    app:layout_constraintEnd_toEndOf="@+id/dog"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/dog" />
+
 
   <ImageView
     android:id="@+id/help_button"

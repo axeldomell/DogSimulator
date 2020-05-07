@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   private float mAccel;
   private float mAccelCurrent;
   private float mAccelLast;
-  private boolean visibility;
   MediaPlayer player;
   private SensorManager sensorManager;
   Sensor accelerometer;
@@ -51,10 +50,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     mAccel =10f;
     mAccelCurrent = SensorManager.GRAVITY_EARTH;
     mAccelLast = SensorManager.GRAVITY_EARTH;
-    visibility=true;
     image = (ImageView) findViewById(R.id.dog);
     dogChanger = new DogChanger(image);
-    helpBox = (TextView)findViewById(R.id.helpbox);
     voiceButton =(ImageButton)findViewById(R.id.vButton);
     helpButton =(ImageView)findViewById(R.id.help_button);
     walkButton=(ImageView)findViewById(R.id.walk_button);
@@ -63,17 +60,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         step(v);
       }
     });
-    helpButton.setOnClickListener(new View.OnClickListener(){
-      public void onClick(View v){
-       if(visibility) {
-         helpBox.setVisibility(View.VISIBLE);
-         visibility = false;
-       }else{
-         helpBox.setVisibility(View.INVISIBLE);
-         visibility=true;
-       }
-      }
-    });
+   helpButton.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+       Intent i = new Intent(getApplicationContext(), PopActivity.class);
+       startActivity(i);
+     }
+   });
     voiceButton.setOnClickListener(new View.OnClickListener()   {
       public void onClick(View v)  {
         startListen();
