@@ -89,12 +89,26 @@
 
 
   <pl.droidsonroids.gif.GifImageView
+    android:id="@+id/dog_walking_gif"
     android:layout_width="792dp"
     android:layout_height="586dp"
     android:src="@drawable/dog_walk"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.501"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.496" />
+
+  <ImageView
+    android:id="@+id/dog_walking_still"
+    android:layout_width="343dp"
+    android:layout_height="647dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/dog_walk" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

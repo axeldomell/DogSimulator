@@ -10,6 +10,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class StepCounter extends AppCompatActivity {
@@ -18,12 +19,16 @@ public class StepCounter extends AppCompatActivity {
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
     private Double distance = 0.0;
+    private ImageView dogStill;
+    private pl.droidsonroids.gif.GifImageView dogMoving;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_counter);
 
+        dogStill = findViewById(R.id.dog_walking_still);
+        dogMoving = findViewById(R.id.dog_walking_gif);
         textView = findViewById(R.id.textView);
         textView3 = findViewById(R.id.textView3);
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -43,11 +48,14 @@ public class StepCounter extends AppCompatActivity {
 
                     if(MagnitudeDelta > 6) {
                         stepCount++;
+                      dogStill.setVisibility(View.INVISIBLE);
+                      dogMoving.setVisibility(View.VISIBLE);
                     }
                     distance = (double) ((stepCount * 78) / 100);
 
                     textView.setText(stepCount.toString());
                     textView3.setText(distance.toString() + " " + "meter");
+
                 }
             }
 
