@@ -9,6 +9,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,10 @@ public class StepCounter extends AppCompatActivity {
     private Double distance = 0.0;
     private ImageView dogStill;
     private pl.droidsonroids.gif.GifImageView dogMoving;
+    private Handler handler;
+    private boolean walking;
+    private Runnable walk;
+    private Runnable still;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,28 @@ public class StepCounter extends AppCompatActivity {
         dogMoving = findViewById(R.id.dog_walking_gif);
         textView = findViewById(R.id.textView);
         textView3 = findViewById(R.id.textView3);
+
+        this.handler = new Handler();
+        this.walking = false;
+
+        this.walk = new Runnable() {
+            @Override
+            public void run() {
+                dogStill.setVisibility(View.INVISIBLE);
+                dogMoving.setVisibility(View.VISIBLE);
+                walking = true;
+            }
+        };
+
+        this.still = new Runnable() {
+            @Override
+            public void run() {
+                dogMoving.setVisibility(View.INVISIBLE);
+                dogStill.setVisibility(View.VISIBLE);
+                walking = false;
+            }
+        };
+
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
@@ -48,8 +75,7 @@ public class StepCounter extends AppCompatActivity {
 
                     if(MagnitudeDelta > 6) {
                         stepCount++;
-                      dogStill.setVisibility(View.INVISIBLE);
-                      dogMoving.setVisibility(View.VISIBLE);
+                        toggleWalkingState();
                     }
                     distance = (double) ((stepCount * 78) / 100);
 
@@ -65,6 +91,17 @@ public class StepCounter extends AppCompatActivity {
         };
 
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    private void toggleWalkingState(){
+        if (walking) {
+            handler.removeCallbacks(still);
+        } else {
+            handler.post(walk);
+        }
+        handler.postDelayed(still, 3000);
+
+
     }
 
     @Override
