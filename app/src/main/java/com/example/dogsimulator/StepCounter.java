@@ -14,8 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.Random;
 
 public class StepCounter extends AppCompatActivity {
     private TextView textView;
@@ -29,6 +28,8 @@ public class StepCounter extends AppCompatActivity {
     private boolean walking;
     private Runnable walk;
     private Runnable still;
+    private Runnable dog_shit;
+    private int random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,21 @@ public class StepCounter extends AppCompatActivity {
         dogMoving = findViewById(R.id.dog_walking_gif);
         textView = findViewById(R.id.textView);
         textView3 = findViewById(R.id.textView3);
+        random = new Random().nextInt(7)*1000;
 
 
         this.handler = new Handler();
         this.walking = false;
 
+
+        findViewById(R.id.shit).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          if(findViewById(R.id.shit).getVisibility() == View.VISIBLE){
+            findViewById(R.id.shit).setVisibility(View.INVISIBLE);
+          }
+           }
+      });
 
         this.walk = new Runnable() {
             @Override
@@ -62,6 +73,15 @@ public class StepCounter extends AppCompatActivity {
                 walking = false;
             }
         };
+
+      this.dog_shit = new Runnable() {
+        @Override
+        public void run() {
+          findViewById(R.id.shit).setVisibility(View.VISIBLE);
+        }
+      };
+      handler.postDelayed(dog_shit, random);
+
 
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

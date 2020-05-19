@@ -104,17 +104,19 @@
 
   <ImageView
     android:id="@+id/dog_walking_still"
-    android:layout_width="343dp"
-    android:layout_height="647dp"
+    android:layout_width="358dp"
+    android:layout_height="585dp"
     android:visibility="visible"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.49"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"
     app:srcCompat="@drawable/dog_walk" />
 
   <ImageView
-    android:id="@+id/dog_shit"
+    android:id="@+id/shit"
     android:layout_width="90dp"
     android:layout_height="160dp"
     android:visibility="invisible"
@@ -123,7 +125,7 @@
     app:layout_constraintHorizontal_bias="0.95"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.844"
+    app:layout_constraintVertical_bias="0.872"
     app:srcCompat="@drawable/dog_shit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
