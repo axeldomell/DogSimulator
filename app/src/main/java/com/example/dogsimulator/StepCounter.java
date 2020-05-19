@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class StepCounter extends AppCompatActivity {
     private TextView textView;
     private TextView textView3;
@@ -37,8 +40,10 @@ public class StepCounter extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         textView3 = findViewById(R.id.textView3);
 
+
         this.handler = new Handler();
         this.walking = false;
+
 
         this.walk = new Runnable() {
             @Override
@@ -146,4 +151,5 @@ public class StepCounter extends AppCompatActivity {
         stepCount = 0;
         distance = 0.0;
     }
+
 }

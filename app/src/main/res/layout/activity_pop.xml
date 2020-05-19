@@ -10,17 +10,74 @@
 
 
   <TextView
-    android:id="@+id/textView4"
-    android:layout_width="279dp"
-    android:layout_height="314dp"
-    android:fontFamily="sans-serif-condensed"
+    android:id="@+id/textView7"
+    android:layout_width="208dp"
+    android:layout_height="88dp"
+    android:fontFamily="casual"
     android:lineSpacingExtra="14sp"
-    android:text="♦ Shake to bark\n♦ Use the mic to talk\n♦ Try to say 'Stand up'\n♦ Wanna go for a walk? Click on the dog down to the right"
+    android:text='Say "Stand up" or "Lay down"'
     android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.975"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView6"
+    app:layout_constraintVertical_bias="0.037" />
+
+  <TextView
+    android:id="@+id/textView6"
+    android:layout_width="256dp"
+    android:layout_height="48dp"
+    android:fontFamily="casual"
+    android:lineSpacingExtra="14sp"
+    android:text="♦ Use the mic to talk"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.896"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView4"
+    app:layout_constraintVertical_bias="0.037" />
+
+  <TextView
+    android:id="@+id/textView4"
+    android:layout_width="256dp"
+    android:layout_height="48dp"
+    android:fontFamily="casual"
+    android:lineSpacingExtra="14sp"
+    android:text="♦ Shake to bark"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.896"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.149" />
+
+  <TextView
+    android:id="@+id/textView8"
+    android:layout_width="247dp"
+    android:layout_height="95dp"
+    android:fontFamily="casual"
+    android:lineSpacingExtra="14sp"
+    android:text="♦ Try to push"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.896"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView7"
+    app:layout_constraintVertical_bias="0.047" />
+
+  <ImageView
+    android:id="@+id/imageView"
+    android:layout_width="96dp"
+    android:layout_height="46dp"
+    android:src="@drawable/walk_dog"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="1.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.172" />
+    app:layout_constraintTop_toBottomOf="@+id/textView7"
+    app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
