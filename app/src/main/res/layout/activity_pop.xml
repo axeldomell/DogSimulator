@@ -15,7 +15,7 @@
     android:layout_height="88dp"
     android:fontFamily="casual"
     android:lineSpacingExtra="14sp"
-    android:text='Say "Stand up" or "Lay down"'
+    android:text='- "Stand up" or -"Lay down"'
     android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -26,18 +26,18 @@
 
   <TextView
     android:id="@+id/textView6"
-    android:layout_width="256dp"
-    android:layout_height="48dp"
+    android:layout_width="263dp"
+    android:layout_height="82dp"
     android:fontFamily="casual"
     android:lineSpacingExtra="14sp"
-    android:text="♦ Use the mic to talk"
+    android:text="♦ Use the mic to talk, try:"
     android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.896"
+    app:layout_constraintHorizontal_bias="0.939"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView4"
-    app:layout_constraintVertical_bias="0.037" />
+    app:layout_constraintVertical_bias="0.018" />
 
   <TextView
     android:id="@+id/textView4"
@@ -64,10 +64,10 @@
     android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.896"
+    app:layout_constraintHorizontal_bias="0.847"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView7"
-    app:layout_constraintVertical_bias="0.047" />
+    app:layout_constraintVertical_bias="0.102" />
 
   <ImageView
     android:id="@+id/imageView"
@@ -76,7 +76,7 @@
     android:src="@drawable/walk_dog"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintHorizontal_bias="0.984"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView7"
     app:layout_constraintVertical_bias="0.0" />
